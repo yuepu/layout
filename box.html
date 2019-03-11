@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css盒模型</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+        }
+        #sec{
+            background: #cdcdcd;
+        }
+        .child{
+            height: 100px;
+            background: yellow;
+            margin-top: 10px;
+        }
+        /*BFC元素垂直方向的边距会发生重叠*/
+        #margin{
+            background: pink;
+            overflow: hidden;/*创建BFC*/
+        }
+        #margin>p{
+            margin: 5px auto 25px;
+            background: red;
+        }
+
+        /*BFC的区域不会与浮动元素的box重叠*/
+        #layout{
+            background: red;
+        }
+        #layout .left{
+            float: left;
+            width: 100px;
+            height: 100px;
+            background: palegoldenrod;
+        }
+        #layout .right{
+            height: 110px;
+            background: palegreen;
+            overflow: auto;/*创建BFC*/
+        }
+        #float{
+            margin-top: 20px;
+            background: red;
+          /*  overflow: hidden;!*创建*!*/
+            /*float: left;*/
+            overflow: auto;
+        }
+        #float .float{
+            float: left;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+<section id="sec">
+    <article class="child">
+
+    </article>
+
+</section>
+
+<section id="margin">
+    <p>1</p>
+    <div style="overflow: hidden">
+        <p>2</p>
+    </div>
+    <p>3</p>
+</section>
+
+
+<section id="layout">
+    <div class="left"></div>
+    <div class="right"></div>
+</section>
+
+<!--清除浮动 子元素即使是float，父元素的高度也会参与计算-->
+<section id="float">
+    <div class="float">
+        我是浮动元素
+    </div>
+
+</section>
+</body>
+</html>

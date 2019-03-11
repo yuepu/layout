@@ -1,0 +1,115 @@
+html *{
+    padding: 0;
+    margin:0;
+}
+.layout article div{
+    min-height: 100px;
+    color: #fff;
+}
+.layout{
+    margin-top: 20px;
+}
+.layout.float .left{
+    float: left;
+    width: 300px;
+    background: red;
+}
+.layout.float .right{
+    float: right;
+    width: 300px;
+    background: yellow;
+}
+.layout.float .center{
+    border: 1px solid #cdcdcd;
+    background: blue;
+}
+
+.layout.absolute .left-right-center>div{
+    position: absolute;
+}
+.layout.absolute .left{
+    left:0;
+    width: 300px;
+    background: red;
+}
+.layout.absolute .center{
+    left: 300px;
+    right: 300px;
+    background: blue;
+}
+.layout.absolute .right{
+    right: 0;
+    width: 300px;
+    background: yellow;
+}
+/*flex*/
+.layout.flexbox{
+    margin-top: 150px;
+}
+.layout.flexbox .left-right-center{
+    display: flex;
+}
+.layout.flexbox .left{
+    width: 300px;
+    background: red;
+}
+.layout.flexbox .center{
+    flex: 1;/*中间自适应的原理*/
+    background: blue;
+}
+.layout.flexbox .right{
+    width: 300px;
+    background:yellow;
+}
+
+/*table*/
+.layout.table .left-right-center{
+    width: 100%;
+    height: 100px;
+    display: table;
+}
+.layout.table .left-right-center>div{
+    display: table-cell;
+}
+.layout.table .left{
+    width: 300px;
+    background: red;
+}
+.layout.table .center{
+    background: blue;
+}
+.layout.table .right{
+    width: 300px;
+    background: yellow;
+}
+
+/*网格布局*/
+.layout.grid .left-right-center{
+    display: grid;
+    width: 100%;
+    grid-template-rows: 100px;/*行高*/
+    grid-template-columns: 300px auto 300px;
+}
+.layout.grid  .left{
+    background: red;
+}
+.layout.grid  .right{
+    background: yellow;
+}
+.layout.grid  .center{
+    background: blue;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
